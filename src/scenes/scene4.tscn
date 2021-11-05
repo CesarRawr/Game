@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://src/scenes/school.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/scenes/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/portal1.gd" type="Script" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 3.3749, 35.883 )
+
+[node name="Scene4" type="Node"]
+
+[node name="TileMap" parent="." instance=ExtResource( 1 )]
+collision_mask = 3
+
+[node name="Next" type="Area2D" parent="."]
+script = ExtResource( 3 )
+scene = "scene5"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Next"]
+position = Vector2( 10, 198 )
+shape = SubResource( 1 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 739, 187 )
+
+[connection signal="body_entered" from="Next" to="Next" method="_on_Next_body_entered"]
