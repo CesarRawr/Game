@@ -78,7 +78,7 @@ __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
 }
-msg = [ "Muy bien", "Que clase de aventuras los eperan hoy" ]
+msg = [ "Muy bien", "Que clase de aventuras los esperan hoy" ]
 scene = "scene3-2"
 
 [node name="icon" type="TextureRect" parent="Control"]
@@ -130,6 +130,7 @@ custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0.321569, 0.321569, 0.321569, 1 )
 bbcode_enabled = true
 bbcode_text = "Texto de Prueba"
+text = "Texto de Prueba"
 __meta__ = {
 "_edit_use_anchors_": false
 }
