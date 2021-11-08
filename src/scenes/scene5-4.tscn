@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://src/scenes/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/scenes/classroom.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/portal1.gd" type="Script" id=10]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 3.524, 36.776 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 4.52399, 34.776 )
+
+[sub_resource type="Gradient" id=3]
+offsets = PoolRealArray( 0.985185 )
+colors = PoolColorArray( 0, 0, 0, 0.584314 )
+
+[sub_resource type="GradientTexture" id=4]
+gradient = SubResource( 3 )
+
+[node name="Node" type="Node"]
+
+[node name="TileMap" parent="." instance=ExtResource( 4 )]
+
+[node name="Next" type="Area2D" parent="."]
+script = ExtResource( 10 )
+scene = "scene6"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Next"]
+position = Vector2( 68, 152 )
+shape = SubResource( 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 713, 151 )
+shape = SubResource( 2 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 673, 134 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -48.0
+margin_bottom = 52.0
+texture = SubResource( 4 )
+expand = true
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="body_entered" from="Next" to="Next" method="_on_Next_body_entered"]

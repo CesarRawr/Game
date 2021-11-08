@@ -28,6 +28,8 @@ func load_dialog():
 		)
 		$Tween.start()
 	else:
+		get_parent().get_child(6).texture.get_gradient().set_color(0, Color(0,0,0,1))
+		yield(get_tree().create_timer(0.5), "timeout")
 		queue_free()
 		get_tree().change_scene("res://src/scenes/" + scene + ".tscn")
 	dialog_index +=1
