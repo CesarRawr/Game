@@ -3,7 +3,7 @@
 [ext_resource path="res://src/controls/dialog_img_2.svg" type="Texture" id=1]
 [ext_resource path="res://src/fonts/ArialCE.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://src/controls/next_dialog_indicator_2.svg" type="Texture" id=3]
-[ext_resource path="res://src/scripts/Control.gd" type="Script" id=4]
+[ext_resource path="res://src/scripts/ControlOG.gd" type="Script" id=4]
 [ext_resource path="res://src/controls/icons/icon_b.svg" type="Texture" id=5]
 
 [sub_resource type="DynamicFont" id=1]

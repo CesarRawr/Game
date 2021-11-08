@@ -8,24 +8,24 @@
 [ext_resource path="res://src/controls/icons/teacher-icon.png" type="Texture" id=6]
 [ext_resource path="res://src/characters/teacher/teacher.png" type="Texture" id=7]
 [ext_resource path="res://src/controls/dialog_img_2.svg" type="Texture" id=8]
-[ext_resource path="res://src/scripts/Control.gd" type="Script" id=9]
+[ext_resource path="res://src/scripts/ControlOG.gd" type="Script" id=9]
 [ext_resource path="res://src/portal1.gd" type="Script" id=10]
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 3.524, 36.776 )
 
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 4.52399, 34.776 )
 
-[sub_resource type="CapsuleShape2D" id=9]
+[sub_resource type="CapsuleShape2D" id=3]
 radius = 15.8413
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=4]
 size = 20
 use_filter = true
 font_data = ExtResource( 1 )
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=5]
 length = 0.8
 loop = true
 step = 1.0
@@ -42,12 +42,12 @@ tracks/0/keys = {
 "values": [ Vector2( 345, 52 ), Vector2( 345, 56 ) ]
 }
 
-[sub_resource type="Gradient" id=11]
+[sub_resource type="Gradient" id=6]
 offsets = PoolRealArray( 0.985185, 1 )
 colors = PoolColorArray( 0, 0, 0, 0.584314, 0, 0, 0, 0.509804 )
 
-[sub_resource type="GradientTexture" id=12]
-gradient = SubResource( 11 )
+[sub_resource type="GradientTexture" id=7]
+gradient = SubResource( 6 )
 
 [node name="Node" type="Node"]
 
@@ -59,19 +59,19 @@ scene = "scene6"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Next"]
 position = Vector2( 68, 152 )
-shape = SubResource( 7 )
+shape = SubResource( 1 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( 713, 151 )
-shape = SubResource( 8 )
+shape = SubResource( 2 )
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
 position = Vector2( 396, 137 )
-shape = SubResource( 9 )
+shape = SubResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="StaticBody2D2"]
 position = Vector2( 396, 136 )
@@ -96,7 +96,7 @@ __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
 }
-msg = [ "Bien chicos, hoy les mostrare acerca de las tortugas" ]
+msg = [ "Bien niños, hoy les enseñaré acerca de las tortugas " ]
 scene = "scene5-2"
 
 [node name="icon" type="TextureRect" parent="Control"]
@@ -144,7 +144,7 @@ margin_left = 15.0
 margin_top = 15.0
 margin_right = -15.0
 margin_bottom = -15.0
-custom_fonts/normal_font = SubResource( 6 )
+custom_fonts/normal_font = SubResource( 4 )
 custom_colors/default_color = Color( 0.321569, 0.321569, 0.321569, 1 )
 bbcode_enabled = true
 bbcode_text = "Texto de Prueba"
@@ -174,14 +174,14 @@ __meta__ = {
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Control/Next"]
 autoplay = "waiting"
-anims/waiting = SubResource( 10 )
+anims/waiting = SubResource( 5 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = -48.0
 margin_bottom = 52.0
-texture = SubResource( 12 )
+texture = SubResource( 7 )
 expand = true
 stretch_mode = 1
 __meta__ = {

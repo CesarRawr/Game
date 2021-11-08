@@ -9,7 +9,7 @@
 [ext_resource path="res://src/characters/main character/tile009.png" type="Texture" id=7]
 [ext_resource path="res://src/controls/icons/bro_icon.png" type="Texture" id=8]
 [ext_resource path="res://src/controls/dialog_img_2.svg" type="Texture" id=9]
-[ext_resource path="res://src/scripts/Control.gd" type="Script" id=10]
+[ext_resource path="res://src/scripts/ControlOG.gd" type="Script" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 3.524, 36.776 )
