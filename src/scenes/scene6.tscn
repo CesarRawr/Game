@@ -4,7 +4,7 @@
 [ext_resource path="res://src/scenes/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/portal1.gd" type="Script" id=3]
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 3.59314, 38.2315 )
 
 [sub_resource type="Gradient" id=2]
@@ -27,11 +27,11 @@ current = true
 
 [node name="Next" type="Area2D" parent="."]
 script = ExtResource( 3 )
-scene = "scene1"
+scene = "plataform-level"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Next"]
 position = Vector2( 67, -16 )
-shape = SubResource( 4 )
+shape = SubResource( 1 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchor_right = 1.0
