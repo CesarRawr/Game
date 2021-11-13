@@ -27,7 +27,7 @@ current = true
 
 [node name="Next" type="Area2D" parent="."]
 script = ExtResource( 3 )
-scene = "plataform-level"
+scene = "scene7"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Next"]
 position = Vector2( 67, -16 )
