@@ -7,13 +7,15 @@ var dialog_index = 0
 var finished = false
 var text_speed = 0.07
 
+var loadText = false
+
 func _ready():
 	$Text.bbcode_text = ''
 	load_dialog()
 
 func _process(delta):
 	$Next.visible = finished
-	if Input.is_action_just_pressed("ui_accept"):
+	if Input.is_action_just_pressed("ui_accept") && loadText:
 		load_dialog()
 
 func load_dialog():
