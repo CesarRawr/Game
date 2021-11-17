@@ -7,7 +7,7 @@ var dialog_index = 0
 var finished = false
 var text_speed = 0.07
 
-var loadText = false
+export var loadText = false
 
 func _ready():
 	$Text.bbcode_text = ''

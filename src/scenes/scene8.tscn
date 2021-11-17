@@ -171,6 +171,7 @@ shape = SubResource( 6 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 173.948, 107.48 )
 frames = SubResource( 7 )
+frame = 1
 speed_scale = 0.4
 playing = true
 
@@ -190,6 +191,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 msg = [ "Bienvenida", "Yo soy lo que sigue despues de la vida", "Soy eso que los humanos por generaciones han llamado Dios", "Espero que te sientas comoda", "Porque tu estancia aquí sera larga", "¿Que?", "¿Que como moriste?", "Dejame mostrarte tu verdad" ]
+scene = "scene9-1"
 
 [node name="Box" type="TextureRect" parent="Control"]
 light_mask = 2

@@ -1,0 +1,299 @@
+[gd_scene load_steps=28 format=2]
+
+[ext_resource path="res://src/maps/school-front/school-front.png" type="Texture" id=1]
+[ext_resource path="res://src/characters/brother/tile006.png" type="Texture" id=2]
+[ext_resource path="res://src/fonts/ArialCE.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://src/scenes/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/scripts/ControlOG.gd" type="Script" id=5]
+[ext_resource path="res://src/controls/dialog_img_2.svg" type="Texture" id=6]
+[ext_resource path="res://src/controls/icons/icon_b.svg" type="Texture" id=7]
+[ext_resource path="res://src/controls/next_dialog_indicator_2.svg" type="Texture" id=8]
+[ext_resource path="res://src/characters/brother/tile012.png" type="Texture" id=9]
+[ext_resource path="res://src/characters/brother/tile017.png" type="Texture" id=10]
+[ext_resource path="res://src/controls/icons/bro_icon.png" type="Texture" id=11]
+[ext_resource path="res://src/characters/brother/tile015.png" type="Texture" id=12]
+[ext_resource path="res://src/characters/brother/tile014.png" type="Texture" id=13]
+[ext_resource path="res://src/characters/brother/tile016.png" type="Texture" id=14]
+[ext_resource path="res://src/characters/brother/tile013.png" type="Texture" id=15]
+
+[sub_resource type="ConvexPolygonShape2D" id=12]
+points = PoolVector2Array( 0, 0, 784, 0, 784, 64, 0, 64 )
+
+[sub_resource type="ConvexPolygonShape2D" id=13]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="TileSet" id=14]
+0/name = "school-front.png 0"
+0/texture = ExtResource( 1 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 784, 304 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+1/name = "school-front.png 1"
+1/texture = ExtResource( 1 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 0, 240, 784, 64 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape = SubResource( 12 )
+1/shape_one_way = false
+1/shape_one_way_margin = 1.0
+1/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 12 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+1/z_index = 2
+2/name = "school-front.png 2"
+2/texture = ExtResource( 1 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 304, 80, 16, 16 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape = SubResource( 13 )
+2/shape_one_way = false
+2/shape_one_way_margin = 1.0
+2/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 13 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+2/z_index = 0
+
+[sub_resource type="RectangleShape2D" id=15]
+extents = Vector2( 147.414, 33.9871 )
+
+[sub_resource type="RectangleShape2D" id=16]
+extents = Vector2( 24.3771, 93.3841 )
+
+[sub_resource type="SpriteFrames" id=17]
+animations = [ {
+"frames": [ ExtResource( 9 ), ExtResource( 15 ), ExtResource( 13 ), ExtResource( 12 ), ExtResource( 14 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "left",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "up",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=18]
+radius = 12.1855
+
+[sub_resource type="RectangleShape2D" id=19]
+extents = Vector2( 6.4118, 25.6001 )
+
+[sub_resource type="DynamicFont" id=11]
+size = 20
+use_filter = true
+font_data = ExtResource( 3 )
+
+[sub_resource type="Animation" id=20]
+length = 0.8
+loop = true
+step = 1.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 345, 52 ), Vector2( 345, 56 ) ]
+}
+
+[sub_resource type="Gradient" id=21]
+offsets = PoolRealArray( 0 )
+colors = PoolColorArray( 0, 0, 0, 0.776471 )
+
+[sub_resource type="GradientTexture" id=22]
+gradient = SubResource( 21 )
+
+[node name="Node" type="Node"]
+
+[node name="TileMap" type="TileMap" parent="."]
+z_index = -2
+tile_set = SubResource( 14 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( -65516, 2, 0, -65515, 2, 0, -65514, 2, 0, -65513, 2, 0, -65512, 2, 0, -65511, 2, 0, -65510, 2, 0, -65509, 2, 0, -65508, 2, 0, 0, 0, 0, 786431, 2, 0, 720945, 2, 0, 851967, 2, 0, 786481, 2, 0, 917503, 2, 0, 852017, 2, 0, 983039, 2, 0, 917553, 2, 0, 1048575, 2, 0, 983040, 1, 0, 983089, 2, 0 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="TileMap"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/StaticBody2D"]
+position = Vector2( 148.492, 155.563 )
+shape = SubResource( 15 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="TileMap"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/StaticBody2D2"]
+position = Vector2( 636.396, 155.563 )
+shape = SubResource( 15 )
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="TileMap"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/StaticBody2D3"]
+position = Vector2( 319.612, 94.7523 )
+shape = SubResource( 16 )
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="TileMap"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/StaticBody2D4"]
+position = Vector2( 462.448, 94.7523 )
+shape = SubResource( 16 )
+
+[node name="Player" parent="." instance=ExtResource( 4 )]
+position = Vector2( 388.909, 59.397 )
+speed = 0
+
+[node name="Brother" type="KinematicBody2D" parent="."]
+position = Vector2( 396.495, 201.768 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Brother"]
+frames = SubResource( 17 )
+animation = "up"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Brother"]
+shape = SubResource( 18 )
+
+[node name="Next" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Next"]
+position = Vector2( 8, 213 )
+shape = SubResource( 19 )
+
+[node name="Control" type="Control" parent="."]
+show_behind_parent = true
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -190.5
+margin_top = -122.0
+margin_right = 190.5
+margin_bottom = -36.0
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+msg = [ "¡Hermanita!", "Ya está haciendose noche", "Deberiamos tomar el atajo", "No, ahí no es peligroso", "Vamos" ]
+scene = "scene9-2"
+loadText = true
+
+[node name="icon" type="TextureRect" parent="Control"]
+margin_top = -85.0
+margin_right = 80.0
+margin_bottom = -5.0
+texture = ExtResource( 7 )
+expand = true
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Control/icon"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -35.0
+margin_top = -33.0
+margin_right = 35.0
+margin_bottom = 37.0
+texture = ExtResource( 11 )
+expand = true
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Box" type="TextureRect" parent="Control"]
+light_mask = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 6 )
+expand = true
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Text" type="RichTextLabel" parent="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 15.0
+margin_top = 15.0
+margin_right = -15.0
+margin_bottom = -15.0
+custom_fonts/normal_font = SubResource( 11 )
+custom_colors/default_color = Color( 0.321569, 0.321569, 0.321569, 1 )
+bbcode_enabled = true
+bbcode_text = "Texto de Prueba"
+text = "Texto de Prueba"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="Control"]
+
+[node name="Next" type="TextureRect" parent="Control"]
+visible = false
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -36.0
+margin_top = -31.1371
+margin_right = -12.0
+margin_bottom = -6.13872
+texture = ExtResource( 8 )
+expand = true
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control/Next"]
+autoplay = "waiting"
+anims/waiting = SubResource( 20 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = SubResource( 22 )
+expand = true
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="tween_completed" from="Control/Tween" to="Control" method="_on_Tween_tween_completed"]

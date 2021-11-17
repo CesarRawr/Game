@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://src/maps/school-front/school-front.png" type="Texture" id=1]
 [ext_resource path="res://src/scenes/Player.tscn" type="PackedScene" id=2]
@@ -8,6 +8,9 @@
 [ext_resource path="res://src/characters/brother/tile014.png" type="Texture" id=6]
 [ext_resource path="res://src/characters/brother/tile016.png" type="Texture" id=7]
 [ext_resource path="res://src/characters/brother/tile017.png" type="Texture" id=8]
+[ext_resource path="res://src/characters/brother/tile006.png" type="Texture" id=9]
+[ext_resource path="res://src/scripts/Brother.gd" type="Script" id=10]
+[ext_resource path="res://src/scripts/Next2.gd" type="Script" id=11]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 784, 0, 784, 64, 0, 64 )
@@ -79,22 +82,31 @@ extents = Vector2( 147.414, 33.9871 )
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 24.3771, 93.3841 )
 
-[sub_resource type="Gradient" id=6]
-offsets = PoolRealArray( 0 )
-colors = PoolColorArray( 0, 0, 0, 0.776471 )
-
-[sub_resource type="GradientTexture" id=7]
-gradient = SubResource( 6 )
-
-[sub_resource type="SpriteFrames" id=8]
+[sub_resource type="SpriteFrames" id=6]
 animations = [ {
 "frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 3 ), ExtResource( 7 ), ExtResource( 8 ) ],
 "loop": true,
 "name": "left",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "up",
 "speed": 5.0
 } ]
 
-[sub_resource type="CapsuleShape2D" id=9]
+[sub_resource type="CapsuleShape2D" id=7]
+radius = 12.1855
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 6.4118, 25.6001 )
+
+[sub_resource type="Gradient" id=9]
+offsets = PoolRealArray( 0 )
+colors = PoolColorArray( 0, 0, 0, 0.776471 )
+
+[sub_resource type="GradientTexture" id=10]
+gradient = SubResource( 9 )
 
 [node name="Node" type="Node"]
 
@@ -131,25 +143,40 @@ shape = SubResource( 5 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 388.909, 59.397 )
+speed = 0
+
+[node name="Brother" type="KinematicBody2D" parent="."]
+position = Vector2( 396.495, 201.768 )
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Brother"]
+frames = SubResource( 6 )
+animation = "left"
+frame = 2
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Brother"]
+shape = SubResource( 7 )
+
+[node name="Next" type="Area2D" parent="."]
+script = ExtResource( 11 )
+scene = "scene10"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Next"]
+position = Vector2( 8, 213 )
+shape = SubResource( 8 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = SubResource( 7 )
+texture = SubResource( 10 )
 expand = true
 stretch_mode = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="KinematicBody2D"]
-frames = SubResource( 8 )
-animation = "left"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
-shape = SubResource( 9 )
+[connection signal="body_entered" from="Next" to="Next" method="_on_Next_body_entered"]

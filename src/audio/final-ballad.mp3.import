@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/final-ballad.mp3-1183a67d82f02046eaffdd01afe8bc71.mp3str"
+
+[deps]
+
+source_file="res://src/audio/final-ballad.mp3"
+dest_files=[ "res://.import/final-ballad.mp3-1183a67d82f02046eaffdd01afe8bc71.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
