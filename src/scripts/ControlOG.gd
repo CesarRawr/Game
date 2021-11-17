@@ -21,7 +21,7 @@ func _process(delta):
 func load_dialog():
 	if dialog_index < msg.size():
 		finished = false
-		$Text.bbcode_text = msg[dialog_index]
+		$Text.bbcode_text = "[center]" + msg[dialog_index] + "[center]"
 		$Text.percent_visible = 0
 		var tween_duration = text_speed * msg[dialog_index].length()
 		$Tween.interpolate_property(
