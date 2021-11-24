@@ -16,13 +16,13 @@
 [ext_resource path="res://src/characters/brother/tile016.png" type="Texture" id=14]
 [ext_resource path="res://src/characters/brother/tile013.png" type="Texture" id=15]
 
-[sub_resource type="ConvexPolygonShape2D" id=12]
+[sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 784, 0, 784, 64, 0, 64 )
 
-[sub_resource type="ConvexPolygonShape2D" id=13]
+[sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 
-[sub_resource type="TileSet" id=14]
+[sub_resource type="TileSet" id=3]
 0/name = "school-front.png 0"
 0/texture = ExtResource( 1 )
 0/tex_offset = Vector2( 0, 0 )
@@ -47,14 +47,14 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 1/navigation_offset = Vector2( 0, 0 )
 1/shape_offset = Vector2( 0, 0 )
 1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-1/shape = SubResource( 12 )
+1/shape = SubResource( 1 )
 1/shape_one_way = false
 1/shape_one_way_margin = 1.0
 1/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 12 ),
+"shape": SubResource( 1 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 1/z_index = 2
@@ -68,25 +68,25 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 2/navigation_offset = Vector2( 0, 0 )
 2/shape_offset = Vector2( 0, 0 )
 2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-2/shape = SubResource( 13 )
+2/shape = SubResource( 2 )
 2/shape_one_way = false
 2/shape_one_way_margin = 1.0
 2/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 13 ),
+"shape": SubResource( 2 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 2/z_index = 0
 
-[sub_resource type="RectangleShape2D" id=15]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 147.414, 33.9871 )
 
-[sub_resource type="RectangleShape2D" id=16]
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 24.3771, 93.3841 )
 
-[sub_resource type="SpriteFrames" id=17]
+[sub_resource type="SpriteFrames" id=6]
 animations = [ {
 "frames": [ ExtResource( 9 ), ExtResource( 15 ), ExtResource( 13 ), ExtResource( 12 ), ExtResource( 14 ), ExtResource( 10 ) ],
 "loop": true,
@@ -99,18 +99,18 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="CapsuleShape2D" id=18]
+[sub_resource type="CapsuleShape2D" id=7]
 radius = 12.1855
 
-[sub_resource type="RectangleShape2D" id=19]
+[sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 6.4118, 25.6001 )
 
-[sub_resource type="DynamicFont" id=11]
+[sub_resource type="DynamicFont" id=9]
 size = 20
 use_filter = true
 font_data = ExtResource( 3 )
 
-[sub_resource type="Animation" id=20]
+[sub_resource type="Animation" id=10]
 length = 0.8
 loop = true
 step = 1.0
@@ -127,18 +127,18 @@ tracks/0/keys = {
 "values": [ Vector2( 345, 52 ), Vector2( 345, 56 ) ]
 }
 
-[sub_resource type="Gradient" id=21]
+[sub_resource type="Gradient" id=11]
 offsets = PoolRealArray( 0 )
 colors = PoolColorArray( 0, 0, 0, 0.776471 )
 
-[sub_resource type="GradientTexture" id=22]
-gradient = SubResource( 21 )
+[sub_resource type="GradientTexture" id=12]
+gradient = SubResource( 11 )
 
 [node name="Node" type="Node"]
 
 [node name="TileMap" type="TileMap" parent="."]
 z_index = -2
-tile_set = SubResource( 14 )
+tile_set = SubResource( 3 )
 cell_size = Vector2( 16, 16 )
 format = 1
 tile_data = PoolIntArray( -65516, 2, 0, -65515, 2, 0, -65514, 2, 0, -65513, 2, 0, -65512, 2, 0, -65511, 2, 0, -65510, 2, 0, -65509, 2, 0, -65508, 2, 0, 0, 0, 0, 786431, 2, 0, 720945, 2, 0, 851967, 2, 0, 786481, 2, 0, 917503, 2, 0, 852017, 2, 0, 983039, 2, 0, 917553, 2, 0, 1048575, 2, 0, 983040, 1, 0, 983089, 2, 0 )
@@ -147,25 +147,25 @@ tile_data = PoolIntArray( -65516, 2, 0, -65515, 2, 0, -65514, 2, 0, -65513, 2, 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/StaticBody2D"]
 position = Vector2( 148.492, 155.563 )
-shape = SubResource( 15 )
+shape = SubResource( 4 )
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="TileMap"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/StaticBody2D2"]
 position = Vector2( 636.396, 155.563 )
-shape = SubResource( 15 )
+shape = SubResource( 4 )
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="TileMap"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/StaticBody2D3"]
 position = Vector2( 319.612, 94.7523 )
-shape = SubResource( 16 )
+shape = SubResource( 5 )
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="TileMap"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/StaticBody2D4"]
 position = Vector2( 462.448, 94.7523 )
-shape = SubResource( 16 )
+shape = SubResource( 5 )
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
 position = Vector2( 388.909, 59.397 )
@@ -178,17 +178,17 @@ __meta__ = {
 }
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Brother"]
-frames = SubResource( 17 )
+frames = SubResource( 6 )
 animation = "up"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Brother"]
-shape = SubResource( 18 )
+shape = SubResource( 7 )
 
 [node name="Next" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Next"]
 position = Vector2( 8, 213 )
-shape = SubResource( 19 )
+shape = SubResource( 8 )
 
 [node name="Control" type="Control" parent="."]
 show_behind_parent = true
@@ -254,7 +254,7 @@ margin_left = 15.0
 margin_top = 15.0
 margin_right = -15.0
 margin_bottom = -15.0
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 9 )
 custom_colors/default_color = Color( 0.321569, 0.321569, 0.321569, 1 )
 bbcode_enabled = true
 bbcode_text = "Texto de Prueba"
@@ -284,12 +284,12 @@ __meta__ = {
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Control/Next"]
 autoplay = "waiting"
-anims/waiting = SubResource( 20 )
+anims/waiting = SubResource( 10 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = SubResource( 22 )
+texture = SubResource( 12 )
 expand = true
 stretch_mode = 1
 __meta__ = {
