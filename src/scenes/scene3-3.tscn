@@ -81,6 +81,8 @@ __meta__ = {
 }
 msg = [ "Oww que bonito, espero que te diviertas." ]
 scene = "scene3-4"
+start = true
+loadText = true
 
 [node name="icon" type="TextureRect" parent="Control"]
 margin_top = -85.0
@@ -132,6 +134,7 @@ custom_colors/default_color = Color( 0.321569, 0.321569, 0.321569, 1 )
 bbcode_enabled = true
 bbcode_text = "Texto de Prueba"
 text = "Texto de Prueba"
+scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }

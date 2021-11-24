@@ -2,20 +2,33 @@ extends Control
 
 export var msg = [""]
 export var scene = ""
+export var text_speed = 0.07
 
 var dialog_index = 0
 var finished = false
-var text_speed = 0.07
+export var start = false
+var piv = 0
 
 export var loadText = false
 
 func _ready():
 	$Text.bbcode_text = ''
-	load_dialog()
+	if start:
+		load_dialog()
+		pass
+	else:
+		yield(get_tree().create_timer(4.6), "timeout")
+		start = true
+		piv = 1
 
 func _process(delta):
+	if start && piv == 1:
+		load_dialog()
+		piv = 0
+		print(start)
+	
 	$Next.visible = finished
-	if Input.is_action_just_pressed("ui_accept") && loadText:
+	if Input.is_action_just_pressed("ui_accept") && loadText && start:
 		load_dialog()
 
 func load_dialog():

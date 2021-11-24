@@ -19,10 +19,19 @@ config/icon="res://icon.png"
 window/size/width=784
 window/size/height=304
 
+[global]
+
+idi=false
+idiom=false
+
 [layer_names]
 
 2d_physics/layer_1="collides"
 2d_physics/layer_2="player"
+
+[locale]
+
+locale_filter=[ 0, [ "es_MX" ] ]
 
 [physics]
 
